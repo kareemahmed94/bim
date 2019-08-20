@@ -15,8 +15,6 @@
                                             <th>User Name</th>
                                             <th>User Phone</th>
                                             <th>User Email</th>
-                                            <th>Address</th>
-                                            <th>Deliver Time</th>
                                             <th>Status</th>
                                         </tr>
                                 </thead>
@@ -27,8 +25,6 @@
                                                 <td>{{$order->user->name}}</td>
                                                 <td>{{$order->user->phone}}</td>
                                                 <td>{{$order->user->email}}</td>
-                                                <td>{{$order->address}}</td>
-                                                <td>{{$order->deliver_time}}</td>
                                                 <td>
                                                    <form action="{{route('order.update',$order->id)}}" method="POST">
                                                         @csrf

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-class UserLoginApiController extends Controller
+class userLoginApiController extends Controller
 {
 
 
@@ -19,7 +19,7 @@ public function userLogin(request $request){
 
      if(isset($user)){
 
-        if(Hash::check($user->password, request('password'))){
+        if(Hash::check($user->password, $request->input('password'))){
             return response()->json(['status' => 200,'message'=>'logged in successfully' , 'user' => $user]);
         }
         
@@ -27,7 +27,6 @@ public function userLogin(request $request){
      }
 
      return response()->json(['status' => 500,'message'=>'wrong email']);
-
 
     }
 

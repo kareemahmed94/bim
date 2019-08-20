@@ -123,6 +123,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         $admin=User::find($id);
+        $admin->notifications()->detach();
         $admin->delete();
         flash('Admin deleted........');
         return redirect()->back();

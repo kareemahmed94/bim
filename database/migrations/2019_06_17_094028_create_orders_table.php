@@ -17,8 +17,6 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('course_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->text('address');
-            $table->time('deliver_time');
             $table->timestamps();
         });
     }

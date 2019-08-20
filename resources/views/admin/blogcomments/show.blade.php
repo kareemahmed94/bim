@@ -1,6 +1,9 @@
-@extends('layouts.admin')
 
-@section('content')
+@include('layouts.header')
+@include('layouts.sidebar')
+@include('layouts.navigation')
+
+
 <div class="row" style="margin-top:100px">
         <div class="col-lg-6 offset-4">
 
@@ -68,7 +71,7 @@
 
 </div>
 
-@stop
+@include('layouts.footer')
 
 
 

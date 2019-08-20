@@ -72,7 +72,7 @@ class offersController extends Controller
 
         ]);
 
-        $users=User::where('role_id','!=',1)->get();
+        $users=User::where('role_id',2)->get();
         $notification->users()->attach($users);
         flash('Offer Created.......');
         return redirect()->route('offers.index');

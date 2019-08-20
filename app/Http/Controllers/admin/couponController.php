@@ -65,7 +65,7 @@ class couponController extends Controller
             'coupon_id' => $coupon->id,
         ]);
 
-        $users = User::where('role_id','!=',1)->get();
+        $users = User::where('role_id',2)->get();
         $notifcation->users()->attach($users);
 
         flash('coupon created');

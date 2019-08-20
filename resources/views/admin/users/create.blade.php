@@ -35,6 +35,17 @@
                             </div>
                             <!--/row-->
 
+                            <div class="form-group row">
+                                    <label class="control-label">Country</label>
+                                        <select class="form-control custom-select" data-placeholder="Choose a Category" name="country_id" tabindex="1">
+
+                                            @foreach($countries as $country)
+                                              <option value="{{$country->id}}">{{$country->name}}</option>
+                                            @endforeach
+                                        </select>
+                            </div>
+
+
 
                             <div class="form-group row">
                                         <label>Password</label>

@@ -7,222 +7,293 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'login', 'middleware' => 'guest.admin'], function () {
 
-        Route::get('/', 'admin\loginController@index')->name('admin.login');
+        Route::get('/','admin\loginController@index')->name('admin.login');
 
-        Route::post('/', 'admin\loginController@adminLogin')->name('admin.login.store');
+        Route::post('/','admin\loginController@adminLogin')->name('admin.login.store');
 
     });
 
-    Route::post('/logout', 'admin\loginController@logout')->name('admin.logout');
+});
 
-    Route::group(['middleware' => 'auth.admin'], function () {
 
-        Route::get('/home', 'HomeController@index')->name('admin.home');
+Route::get('/','admin\loginController@logout')->name('admin.logout');
 
-        Route::get('/', 'admin\AdminController@index')->name('admin.index');
+Route::group(['prefix'=>'admins' , 'middleware' => 'auth.admin'],function(){
 
-        Route::get('/create', 'admin\AdminController@create')->name('admin.create');
+    Route::get('/home', 'HomeController@index')->name('admin.home');
 
-        Route::post('/store', 'admin\AdminController@store')->name('admin.store');
+    Route::get('/', 'admin\AdminController@index')->name('admin.index');
 
-        Route::get('{admin}/edit', 'admin\AdminController@edit')->name('admin.edit');
+    Route::get('/create', 'admin\AdminController@create')->name('admin.create');
 
-        Route::patch('{admin}/update', 'admin\AdminController@update')->name('admin.update');
+    Route::post('/store', 'admin\AdminController@store')->name('admin.store');
 
-        Route::delete('{admin}/delete', 'admin\AdminController@destroy')->name('admin.delete');
+    Route::get('{admin}/edit', 'admin\AdminController@edit')->name('admin.edit');
 
-        Route::group(['prefix' => '/users'], function () {
+    Route::patch('{admin}/update', 'admin\AdminController@update')->name('admin.update');
 
-            Route::get('/', 'admin\UsersController@index')->name('user.index');
+    Route::delete('{admin}/delete', 'admin\AdminController@destroy')->name('admin.delete');
 
-            Route::get('/create', 'admin\UsersController@create')->name('user.create');
 
-            Route::post('/store', 'admin\UsersController@store')->name('user.store');
+    Route::group(['prefix'=>'/users'],function(){
 
-            Route::get('{user}/edit', 'admin\UsersController@edit')->name('user.edit');
+        Route::get('/', 'admin\UsersController@index')->name('user.index');
 
-            Route::patch('{user}/update', 'admin\UsersController@update')->name('user.update');
+        Route::get('/create', 'admin\UsersController@create')->name('user.create');
 
-            Route::delete('{user}/delete', 'admin\UsersController@destroy')->name('user.delete');
+        Route::post('/store', 'admin\UsersController@store')->name('user.store');
 
-        });
+        Route::get('{user}/edit', 'admin\UsersController@edit')->name('user.edit');
 
-        Route::group(['prefix' => '/instructors'], function () {
+        Route::patch('{user}/update', 'admin\UsersController@update')->name('user.update');
 
-            Route::get('/', 'admin\instructorController@index')->name('instructor.index');
+        Route::delete('{user}/delete', 'admin\UsersController@destroy')->name('user.delete');
 
-            Route::get('/create', 'admin\instructorController@create')->name('instructor.create');
-
-            Route::post('/store', 'admin\instructorController@store')->name('instructor.store');
-
-            Route::get('{instructor}/edit', 'admin\instructorController@edit')->name('instructor.edit');
-
-            Route::put('{instructor}/update', 'admin\instructorController@update')->name('instructor.update');
-
-            Route::delete('{instructor}/delete', 'admin\instructorController@destroy')->name('instructor.delete');
-
-        });
-
-   Route::group(['prefix'=>'/programs'],function(){
-
-        Route::get('/','admin\ProgramController@index')->name('programe.index');
-
-        Route::get('/store','admin\ProgramController@create')->name('programe.create');
-
-        Route::post('/store','admin\ProgramController@store')->name('programe.store');
-
-        Route::get('/{program}/edit','admin\ProgramController@edit')->name('programe.edit');
-
-        Route::put('/{program}/update','admin\ProgramController@update')->name('programe.update');
-
-        Route::delete('/{program}/delete','admin\ProgramController@destroy')->name('programe.delete');
     });
 
-        Route::group(['prefix' => '/blogs'], function () {
 
-            Route::get('/', 'admin\BlogsController@index')->name('blog.index');
+    Route::group(['prefix'=>'/instructors'],function(){
 
-            Route::get('/create', 'admin\BlogsController@create')->name('blog.create');
+        Route::get('/', 'admin\instructorController@index')->name('instructor.index');
 
-            Route::post('/store', 'admin\BlogsController@store')->name('blog.store');
+        Route::get('/create', 'admin\instructorController@create')->name('instructor.create');
 
-            Route::get('{blog}/edit', 'admin\BlogsController@edit')->name('blog.edit');
+        Route::post('/store', 'admin\instructorController@store')->name('instructor.store');
 
-            Route::patch('{blog}/update', 'admin\BlogsController@update')->name('blog.update');
+        Route::get('{instructor}/edit', 'admin\instructorController@edit')->name('instructor.edit');
 
-            Route::delete('{blog}/delete', 'admin\BlogsController@destroy')->name('blog.delete');
+        Route::put('{instructor}/update', 'admin\instructorController@update')->name('instructor.update');
 
+        Route::delete('{instructor}/delete', 'admin\instructorController@destroy')->name('instructor.delete');
 
-            Route::get('/{blog}/comments/showblogcomments', 'admin\BlogCommentsController@show')->name('blogcomments.show');
+    });
 
-            Route::patch('/{comment}/updateblogStatus', 'admin\BlogCommentsController@update')->name('blogcomment.update');
 
+    Route::group(['prefix'=>'/blogs'],function(){
 
-        });
+        Route::get('/', 'admin\BlogsController@index')->name('blog.index');
 
-        Route::group(['prefix' => '/courses'], function () {
+        Route::get('/create', 'admin\BlogsController@create')->name('blog.create');
 
-            Route::get('/', 'admin\CoursesController@index')->name('course.index');
+        Route::post('/store', 'admin\BlogsController@store')->name('blog.store');
 
-            Route::get('/create', 'admin\CoursesController@create')->name('course.create');
+        Route::get('{blog}/edit', 'admin\BlogsController@edit')->name('blog.edit');
 
-            Route::get('{course}/edit', 'admin\CoursesController@edit')->name('course.edit');
+        Route::patch('{blog}/update', 'admin\BlogsController@update')->name('blog.update');
 
-            Route::delete('{course}/delete', 'admin\CoursesController@destroy')->name('course.delete');
+        Route::delete('{blog}/delete', 'admin\BlogsController@destroy')->name('blog.delete');
 
-            Route::post('/store', 'admin\CoursesController@store')->name('course.store');
 
-            Route::patch('{course}/update', 'admin\CoursesController@update')->name('course.update');
 
-            Route::get('/addvideos', 'admin\CoursesController@addVideosToCourse')->name('coures.video.add');
+       Route::get('/{blog}/comments/showblogcomments', 'admin\BlogCommentsController@show')->name('blogcomments.show');
 
-
-            Route::get('/{course}/comments/showcoursecomments', 'admin\CourseCommentsController@show')->name('coursecomments.show');
-
-            Route::patch('/{comment}/updateCourseStatus', 'admin\CourseCommentsController@update')->name('coursecomment.update');
-
-
-        });
-
-        Route::group(['prefix' => '/coupons'], function () {
-
-            Route::get('/', 'admin\couponController@index')->name('coupon.index');
-
-            Route::get('/create', 'admin\couponController@create')->name('coupon.create');
-
-            Route::get('{coupon}/edit', 'admin\couponController@edit')->name('coupon.edit');
-
-            Route::delete('{coupon}/delete', 'admin\couponController@destroy')->name('coupon.delete');
-
-            Route::post('/store', 'admin\couponController@store')->name('coupon.store');
-
-            Route::put('{coupon}/update', 'admin\couponController@update')->name('coupon.update');
-
-
-        });
-
-        Route::group(['prefix' => '/orders'], function () {
-
-            Route::get('/', 'admin\OrdersController@show')->name('orders.index');
-
-            Route::patch('/{order}/update', 'admin\OrdersController@update')->name('order.update');
-
-        });
-
-        Route::group(['prefix' => '/offers'], function () {
-
-            Route::get('/', 'admin\offersController@index')->name('offers.index');
-
-            Route::get('/create', 'admin\offersController@create')->name('offers.create');
-
-            Route::post('/store', 'admin\offersController@store')->name('offers.store');
-
-            Route::get('/{offer}/edit', 'admin\offersController@edit')->name('offers.edit');
-
-            Route::patch('/{offer}/update', 'admin\offersController@update')->name('offers.update');
-
-            Route::delete('/{offer}/delete', 'admin\offersController@destroy')->name('offers.delete');
-        });
-
-        Route::group(['prefix' => '/videos'], function () {
-
-            Route::get('/', 'admin\videosController@index')->name('videos.index');
-
-            Route::get('/create', 'admin\videosController@create')->name('videos.create');
-
-            Route::post('/store', 'admin\videosController@store')->name('videos.store');
-
-            Route::get('/{video}/edit', 'admin\videosController@edit')->name('videos.edit');
-
-            Route::patch('/{video}/update', 'admin\videosController@update')->name('videos.update');
-
-            Route::delete('/{video}/delete', 'admin\videosController@destroy')->name('videos.delete');
-        });
-
-        Route::group(['prefix' => '/categories'], function () {
-
-            Route::get('/', 'admin\categoryController@index')->name('categories.index');
-
-            Route::post('/store', 'admin\categoryController@store')->name('categories.store');
-
-            Route::get('/{video}/edit', 'admin\categoryController@edit')->name('categories.edit');
-
-            Route::patch('/{video}/update', 'admin\categoryController@update')->name('categories.update');
-
-            Route::delete('/{video}/delete', 'admin\categoryController@destroy')->name('categories.delete');
-        });
-
-        Route::group(['prefix' => '/contacts'], function () {
-
-            Route::get('/', 'admin\ContactController@index')->name('contacts.index');
-        });
-
-        Route::group(['prefix' => '/notifications'], function () {
-
-            Route::get('/', 'admin\NotificationController@index')->name('notifications.index');
-
-        });
-
-        Route::group(['prefix' => '/settings'], function () {
-
-            Route::get('/', 'admin\settingController@index')->name('settings.index');
-
-            Route::get('/{setting}/edit', 'admin\settingController@edit')->name('setting.edit');
-
-            Route::patch('/{setting}/update', 'admin\settingController@update')->name('setting.update');
-
-        });
+       Route::patch('/{comment}/updateblogStatus', 'admin\BlogCommentsController@update')->name('blogcomment.update');
 
 
     });
+
+
+    Route::group(['prefix'=>'/courses'],function(){
+
+        Route::get('/', 'admin\CoursesController@index')->name('course.index');
+
+        Route::get('/create', 'admin\CoursesController@create')->name('course.create');
+
+        Route::get('{course}/edit', 'admin\CoursesController@edit')->name('course.edit');
+
+        Route::delete('{course}/delete', 'admin\CoursesController@destroy')->name('course.delete');
+
+        Route::post('/store', 'admin\CoursesController@store')->name('course.store');
+
+        Route::patch('{course}/update', 'admin\CoursesController@update')->name('course.update');
+
+        Route::get('/addvideos', 'admin\CoursesController@addVideosToCourse')->name('coures.video.add');
+
+
+
+       Route::get('/{course}/comments/showcoursecomments', 'admin\CourseCommentsController@show')->name('coursecomments.show');
+
+       Route::patch('/{comment}/updateCourseStatus', 'admin\CourseCommentsController@update')->name('coursecomment.update');
+
+
+    });
+
+
+    Route::group(['prefix'=>'/coupons'],function(){
+
+        Route::get('/', 'admin\couponController@index')->name('coupon.index');
+
+        Route::get('/create', 'admin\couponController@create')->name('coupon.create');
+
+        Route::get('{coupon}/edit', 'admin\couponController@edit')->name('coupon.edit');
+
+        Route::delete('{coupon}/delete', 'admin\couponController@destroy')->name('coupon.delete');
+
+        Route::post('/store', 'admin\couponController@store')->name('coupon.store');
+
+        Route::put('{coupon}/update', 'admin\couponController@update')->name('coupon.update');
+
+
+    });
+
+    Route::group(['prefix'=>'/orders'],function(){
+
+        Route::get('/', 'admin\OrdersController@show')->name('orders.index');
+
+        Route::patch('/{order}/update', 'admin\OrdersController@update')->name('order.update');
+
+    });
+
+    Route::group(['prefix'=>'/offers'],function(){
+
+        Route::get('/','admin\offersController@index')->name('offers.index');
+
+        Route::get('/create','admin\offersController@create')->name('offers.create');
+
+        Route::post('/store','admin\offersController@store')->name('offers.store');
+
+        Route::get('/{offer}/edit','admin\offersController@edit')->name('offers.edit');
+
+        Route::patch('/{offer}/update','admin\offersController@update')->name('offers.update');
+
+        Route::delete('/{offer}/delete','admin\offersController@destroy')->name('offers.delete');
+    });
+
+
+    Route::group(['prefix'=>'/videos'],function(){
+
+        Route::get('/','admin\videosController@index')->name('videos.index');
+
+        Route::get('/create','admin\videosController@create')->name('videos.create');
+
+        Route::post('/store','admin\videosController@store')->name('videos.store');
+
+        Route::get('/{video}/edit','admin\videosController@edit')->name('videos.edit');
+
+        Route::patch('/{video}/update','admin\videosController@update')->name('videos.update');
+
+        Route::delete('/{video}/delete','admin\videosController@destroy')->name('videos.delete');
+    });
+
+    Route::group(['prefix'=>'/categories'],function(){
+
+        Route::get('/','admin\categoryController@index')->name('categories.index');
+
+        Route::post('/store','admin\categoryController@store')->name('categories.store');
+
+        Route::get('/{video}/edit','admin\categoryController@edit')->name('categories.edit');
+
+        Route::patch('/{video}/update','admin\categoryController@update')->name('categories.update');
+
+        Route::delete('/{video}/delete','admin\categoryController@destroy')->name('categories.delete');
+    });
+
+
+    Route::group(['prefix'=>'/programs'],function(){
+
+        Route::get('/','admin\programController@index')->name('programe.index');
+
+        Route::get('/store','admin\programController@create')->name('programe.create');
+
+        Route::post('/store','admin\programController@store')->name('programe.store');
+
+        Route::get('/{program}/edit','admin\programController@edit')->name('programe.edit');
+
+        Route::put('/{program}/update','admin\programController@update')->name('programe.update');
+
+        Route::delete('/{program}/delete','admin\programController@destroy')->name('programe.delete');
+    });
+
+
+    Route::group(['prefix'=>'/contacts'],function(){
+
+        Route::get('/','admin\ContactController@index')->name('contacts.index');
+    });
+
+
+    Route::group(['prefix'=>'/notifications'],function(){
+
+        Route::get('/', 'admin\NotificationController@index')->name('notifications.index');
+
+    });
+
+    Route::group(['prefix'=>'/settings'],function(){
+
+        Route::get('/', 'admin\settingController@index')->name('settings.index');
+
+        Route::get('/{setting}/edit', 'admin\settingController@edit')->name('setting.edit');
+
+        Route::patch('/{setting}/update', 'admin\settingController@update')->name('setting.update');
+
+    });
+
+
+
 });
 
 
 Route::group(['prefix' => 'api'], function () {
 
-    Route::post('/login', 'UserLoginApiController@userLogin')->name('user.login');
+    Route::post('/login', 'userLoginApiController@userLogin')->name('user.login');
 
-    Route::post('/register', 'UserLoginApiController@register')->name('user.register');
+    Route::post('/register', 'userLoginApiController@register')->name('user.register');
 
     Route::get('/courses', 'userCoursesApiController@index')->name('user.courses');
 });
+
+
+
+
+Route::group(['prefix' => 'front' , 'namespace' => 'front'], function () {
+
+    Route::get('locale/{locale}',function($locale){
+        Session::put('locale',$locale);
+        //return 'hello';
+        return redirect()->back();
+    })->name('localization');
+
+   // Route::get('/login', 'loginController@index')->name('front.login');
+
+    Route::get('/logout', 'loginController@logout')->name('front.logout');
+
+    Route::get('/register', 'registerController@index')->name('front.register');
+
+    Route::post('/register/store', 'registerController@register')->name('front.register.store');
+
+    Route::post('/login', 'loginController@userLogin')->name('front.login.store');
+
+
+    //Route::group(['prefix' => 'user' , 'middleware' => 'auth'],function(){
+
+        Route::get('/profile', 'profileController@index')->name('front.profile');
+
+        Route::get('/myorders' , 'myordersController@index')->name('front.myorders');
+
+        Route::get('/myorders/{order}/show' , 'myordersController@show')->name('front.myorder.show');
+
+        Route::patch('/profile/{id}/update', 'profileController@update')->name('front.profile.update');
+
+    //});
+
+    Route::get('/home', 'homeController@index')->name('front.home');
+
+    Route::post('/contact', 'homeController@store')->name('front.contact');
+
+    Route::get('/about', 'aboutController@index')->name('front.about');
+
+    Route::get('/blogs', 'blogController@index')->name('front.blog');
+
+    Route::get('blogs/{blog}/blog', 'blogController@show')->name('front.blog_details');
+
+    Route::get('/courses', 'coursesController@index')->name('front.courses');
+
+    Route::get('courses/{course}/show', 'coursesController@show')->name('front.courses.show');
+
+    Route::get('courses/showcourses', 'coursesController@showCourses')->name('front.courses.category');
+
+    Route::get('/instructors', 'instructorsController@index')->name('front.instructors');
+
+});
+
+
+

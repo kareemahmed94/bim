@@ -10,17 +10,16 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
-    <title>Bimaestro Dashboard</title>
+    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
     <!-- This page CSS -->
     <!-- Vector CSS -->
-    <link href="{{asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
     <!-- chartist CSS -->
     <link href="{{asset('assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}"
-          rel="stylesheet">
+    <link href="{{asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
@@ -42,7 +41,7 @@
 <div class="preloader">
     <div class="loader">
         <div class="loader__figure"></div>
-        <p class="loader__label">Bimaestro Dashboard</p>
+        <p class="loader__label">Admin Pro</p>
     </div>
 </div>
 <!-- ============================================================== -->
@@ -67,9 +66,7 @@
                     </li> --}}
                     <li class="nav-devider"></li>
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-account"></i><span class="hide-menu">Admins
-                            </span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Admins <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('admin.index')}}">All Admins </a></li>
                             <li><a href="{{route('admin.create')}}">Create Admin</a></li>
@@ -77,9 +74,7 @@
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-account-multiple-outline"></i><span class="hide-menu">Users
-                            </span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu">Users <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('user.index')}}">All Users </a></li>
                             <li><a href="{{route('user.create')}}">Create User</a></li>
@@ -87,17 +82,14 @@
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><<i
-                                    class="mdi mdi-school"></i><span class="hide-menu">Instructors
-                            </span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><<i class="mdi mdi-school"></i><span class="hide-menu">Instructors<span class="label label-rouded label-themecolor pull-right">4</span></span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('instructor.index')}}">All Instructors </a></li>
                             <li><a href="{{route('instructor.create')}}">Create Instructor</a></li>
                         </ul>
                     </li>
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-check-all"></i><span class="hide-menu">Courses</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-check-all"></i><span class="hide-menu">Courses</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('course.index')}}">All Courses</a></li>
                             <li><a href="{{route('course.create')}}">Create Course</a></li>
@@ -105,42 +97,7 @@
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-gift"></i><span class="hide-menu">Coupons</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{route('coupon.index')}}">All Coupons</a></li>
-                            <li><a href="{{route('coupon.create')}}">Create Coupon</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-archive"></i><span class="hide-menu">Categories</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{route('categories.index')}}">All Categories</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-gift"></i><span class="hide-menu">Offers</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{route('offers.index')}}">All Offers</a></li>
-                            <li><a href="{{route('offers.create')}}">Create Offer</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-numeric-9-plus-box-outline"></i><span class="hide-menu">Orders</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{route('orders.index')}}">All Orders</a></li>
-                        </ul>
-                    </li>
-
-
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-video"></i><span class="hide-menu">Programs</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-check-all"></i><span class="hide-menu">Programs</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('programe.index')}}">All Programs</a></li>
                             <li><a href="{{route('programe.create')}}">Create Program</a></li>
@@ -148,36 +105,73 @@
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"> <i
-                                    class="mdi mdi-blogger"></i><span class="hide-menu">Blogs</span></a>
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gift"></i><span class="hide-menu">Coupons</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('coupon.index')}}">All Coupons</a></li>
+                            <li><a href="{{route('coupon.create')}}">Create Coupon</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-archive"></i><span class="hide-menu">Categories</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('categories.index')}}">All Categories</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gift"></i><span class="hide-menu">Offers</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('offers.index')}}">All Offers</a></li>
+                            <li><a href="{{route('offers.create')}}">Create Offer</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-numeric-9-plus-box-outline"></i><span class="hide-menu">Orders</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('orders.index')}}">All Orders</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-video"></i><span class="hide-menu">Videos</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('videos.index')}}">All Videos</a></li>
+                            <li><a href="{{route('videos.create')}}">Create Video</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"> <i class="mdi mdi-blogger"></i><span class="hide-menu">Blogs</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('blog.index')}}">All Blogs</a></li>
                             <li><a href="{{route('blog.create')}}">Create Blog</a></li>
                         </ul>
                     </li>
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-cellphone-settings"></i><span class="hide-menu">Contacts</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-cellphone-settings"></i><span class="hide-menu">Contacts</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('contacts.index')}}">All Contacts</a></li>
                         </ul>
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-cellphone-settings"></i><span class="hide-menu">Notifications</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-cellphone-settings"></i><span class="hide-menu">Notifications</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('notifications.index')}}">All Notifications</a></li>
                         </ul>
                     </li>
 
 
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="mdi mdi-mouse"></i><span class="hide-menu">Settings</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-mouse"></i><span class="hide-menu">Settings</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('settings.index')}}">Site Settings</a></li>
                         </ul>
                     </li>
+
 
 
                 </ul>
@@ -194,10 +188,20 @@
             <!-- Logo -->
             <!-- ============================================================== -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ route('admin.index') }}">
-                    <img src="{{asset('assets/images/logo-light.png')}}" alt="homepage" width="80"/>
-                    Dashboard
-                </a>
+                <a class="navbar-brand" href="index.html">
+                    <!-- Logo icon --><b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <img src="{{asset('assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo icon -->
+                        <img src="{{asset('assets/images/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text --><span>
+                     <!-- dark Logo text -->
+                     <img src="{{asset('assets/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo text -->
+                     <img src="{{asset('assets/images/logo-light-text.png')}}" class="light-logo" alt="homepage" /></span> </a>
             </div>
             <!-- ============================================================== -->
             <!-- End Logo -->
@@ -208,10 +212,8 @@
                 <!-- ============================================================== -->
                 <ul class="navbar-nav mr-auto">
                     <!-- This is  -->
-                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
-                                            href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                    <li class="nav-item"><a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark"
-                                            href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
 
                 </ul>
                 <!-- ============================================================== -->
@@ -221,20 +223,16 @@
                     <!-- ============================================================== -->
                     <!-- Search -->
                     <!-- ============================================================== -->
-                    <li class="nav-item hidden-xs-down search-box"><a
-                                class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
-                                    class="ti-search"></i></a>
+                    <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                         <form class="app-search">
-                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i
-                                        class="ti-close"></i></a></form>
+                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                     </li>
                     <!-- ============================================================== -->
                     <!-- Comment -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
-                            <div class="notify"><span class="heartbit"></span> <span class="point"></span></div>
+                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+                            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
                             <ul>
@@ -249,17 +247,14 @@
                                             <a href="#">
                                                 <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
                                                 <div class="mail-contnet">
-                                                    <h5>{{$notification->title_ar}}</h5> <span
-                                                            class="mail-desc">{{$notification->body_ar}}</span> <span
-                                                            class="time">{{$notification->created_at}}</span></div>
+                                                    <h5>{{$notification->title_ar}}</h5> <span class="mail-desc">{{$notification->body_ar}}</span> <span class="time">{{$notification->created_at}}</span> </div>
                                             </a>
                                         @endforeach
 
                                     </div>
                                 </li>
                                 <li>
-                                    <a class="nav-link text-center" href="{{route('notifications.index')}}"> <strong>Check
-                                            all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                    <a class="nav-link text-center" href="{{route('notifications.index')}}"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
                                 </li>
                             </ul>
                         </div>
@@ -273,17 +268,12 @@
                     <!-- Profile -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><img
-                                    src="{{asset('assets/images/users/person-image-icon-7.jpg')}}" alt="user"
-                                    class="profile-pic"/></a>
+                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('assets/images/users/person-image-icon-7.jpg')}}" alt="user" class="profile-pic" /></a>
                         <div class="dropdown-menu dropdown-menu-right animated flipInY">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img
-                                                    src="{{asset('assets/images/users/person-image-icon-7.jpg')}}"
-                                                    alt="user"></div>
+                                        <div class="u-img"><img src="{{asset('assets/images/users/person-image-icon-7.jpg')}}" alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{auth()->user()->name}}</h4>
                                             <p class="text-muted">{{auth()->user()->email}}</p></div>
@@ -291,7 +281,7 @@
                                 </li>
                                 <li role="separator" class="divider"></li>
 
-                                <li><a href="#" onclick="document.getElementById('logout-form').submit()" ><i class="fa fa-power-off"></i> Logout</a></li>
+                                <li><a href="{{route('admin.logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
                         </div>
                     </li>
@@ -299,9 +289,7 @@
             </div>
         </nav>
     </header>
-    <form id="logout-form" action="{{route('admin.logout')}}" method="POST">
-        @csrf
-    </form>
+
     <div class="page-wrapper">
 
         <!-- ============================================================== -->
@@ -310,9 +298,9 @@
         <div class="container-fluid">
 
 
-            @yield('content')
+                   @yield('content')
 
-            <footer class="footer"> © {{  date('Y')  }} Bimaestro Powered by <a href="https://krito.io/" target="_blank">Krito</a></footer>
+            <footer class="footer"> © 2019 Admin Pro by wrappixel.com </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
 

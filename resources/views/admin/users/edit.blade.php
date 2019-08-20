@@ -28,7 +28,18 @@
                                         <input type="number" name="phone" class="form-control" value="{{$user->phone}}" required>
                                     </div>
 
-                          
+                                    <div class="form-group row">
+                                        <label class="control-label">Country</label>
+                                            <select class="form-control custom-select" data-placeholder="Choose a Category" name="country_id" tabindex="1">
+
+                                                @foreach($countries as $country)
+
+                                                <option value="{{$country->id}}" @if($user->country->name==$country->name) selected @endif>{{$country->name}}</option>
+
+                                                @endforeach
+                                            </select>
+                                    </div>
+
 
                                     <div class="form-group row">
                                         <label>Password</label>

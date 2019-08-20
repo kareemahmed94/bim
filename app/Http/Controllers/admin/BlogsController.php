@@ -84,7 +84,7 @@ class BlogsController extends Controller
         'blog_id' => $blog->id
        ]);
 
-    $users = User::where('role_id','!=',1)->get();
+    $users = User::where('role_id',2)->get();
     $notifcation->users()->attach($users);
 
        flash('Blog Added........');

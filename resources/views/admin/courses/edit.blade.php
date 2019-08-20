@@ -14,8 +14,6 @@
                         <div class="form-body">
                                 <h3 class="card-title">Update Courae</h3>
                                 <hr>
-
-
                                     <div class="form-group row">
                                         <label class="control-label">الاسم</label>
                                         <input type="text" name="name_ar" class="form-control" value="{{$course->name_ar}}" required>
@@ -89,12 +87,19 @@
 
 
                         <div class="form-group row">
-                                                <label class="control-label">Hours</label>
-                                                <input type="text" name="hours" class="form-control" value="{{$course->hours}}" required>
+                            <label class="control-label">Hours</label>
+                            <input type="text" name="hours" class="form-control" value="{{$course->hours}}" required>
 
-                               </div>
+                        </div>
 
+                        <div class="form-group row">
+                            <label class="control-label">Static or Not</label>
+                            <select class="form-control">
+                                <option @if($course->static==1) selected @endif>Static</option>
+                                <option @if($course->static==0) selected @endif>Not Static</option>
+                            </select>
 
+                        </div>
 
                         <div class="form-actions">
                             <button type="submit" class="btn btn-info mb-2"> <i class="fa fa-check"></i>update Course</button>

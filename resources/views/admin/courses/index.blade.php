@@ -23,6 +23,7 @@
                                             <th>Price</th>
                                             <th>Free or Not</th>
                                             <th>Hours</th>
+                                            <th>Static or Not</th>
                                             <th>View Comments</th>
                                             <th>Edit course</th>
                                             <th>Delete course</th>
@@ -45,6 +46,7 @@
                                                 <td>{{$course->price}}</td>
                                                 <td>@if($course->is_free==1) Free @else NotFree @endif</td>
                                                 <td>{{$course->hours}}</td>
+                                                <td>@if($course->static==1) Static @else Not Static @endif</td>
                                                 <td><a href="{{route('coursecomments.show',$course->id)}}">view comments</a></td>
 
                                                 <td><a href="{{route('course.edit',$course->id)}}">Edit</a></td>

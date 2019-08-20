@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
+
                 <div class="row page-titles">
 
                     <div class="">
@@ -109,13 +107,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-                    </div>
-
+                            </div>
             </div>
-        </div>
-
-
-@endsection
+    @endsection
