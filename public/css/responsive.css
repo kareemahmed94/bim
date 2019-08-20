@@ -1,0 +1,151 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    //CSS
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    //CSS
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    //CSS
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    //CSS
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .blog-name-image img{width: 100%;}
+
+    .page-profile .profile-text {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+    .top__header{text-align: center;}
+
+    .page-profile .form-control{width: 96%;}
+
+    .page-profile .input-group-append{left: 6px;}
+
+    .header-4 .header-page .header-info {
+        top: 61px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+@media (min-width: 320px) and (max-width: 480px) {
+    
+  .header-2 .header-page .header-info {width: 95%;}
+
+  .navbar{justify-content: center;}
+
+  .header-search .form-inline .form-group {width: 248px;}
+
+  .header-search .btn {bottom: 8px;}
+
+  .top__header {margin-bottom: 29px; text-align: center;}
+
+  .services p{text-align: center; width: 100%;}
+
+  .footer h3 {margin-top: 86px;}
+
+  .header-1 .header-page .header-info {left: 12px; width: 100%; }
+
+  .blog-name-image img{width: 100%;}
+
+  .page-designe .about-text p {
+      font-family: font-regular;
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .page-profile .profile-text {margin: auto; height: auto;}
+
+  .page-profile .form-control{width: 96%;}
+
+  .page-profile .input-group-append{left: 6px;}
+
+  .header-4 .header-page .header-info {top: 61px;}
+
+  .header-4 .header-page h2{font-size: 18px;}
+
+  .header-4 .header-page p{font-size: 14px;}
+
+  .header-page h2{font-size: 24px;}
+
+  .header-page p {
+    font-size: 13px;
+    line-height: 22px;
+    width: 90%;
+  }
+
+  .header-page .header-info { left: 18px; width: 100%; }
+
+  .page-about .about-text{width: 95%;}
+
+  .page-about .about-text p {
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+  }
+
+  .blog__name .blog-text{width: 87%;}
+
+  .blog__name .blog-text p{
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+  }
+
+.modal-content{width: 95%;}
+
+.login .dropdown-toggle {bottom: 13px; left: 28px;}
+
+.top__header .login {top: 34px;}
+
+.navbar-nav{background-color: #fff;}
+
+.close{display: block;}
+
+}
